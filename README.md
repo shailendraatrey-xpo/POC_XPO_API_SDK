@@ -1,2 +1,2 @@
-# POC_XPO_API_SDK
+# About
 This is POC to showcase how the API SDK would work.
