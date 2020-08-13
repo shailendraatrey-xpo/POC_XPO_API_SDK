@@ -1,2 +1,2 @@
 # About
-This is POC to showcase how the API SDK would work.
+This is POC to showcase how the XPO Dotnet Core API SDK would work.
