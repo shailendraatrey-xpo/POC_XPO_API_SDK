@@ -16,8 +16,8 @@ namespace TestOAuthAPISDK
 
         static async void CallTokenApi()
         {
-            var oauthApi = new OAuthAPI("X-API-Key");
-            var Response = await oauthApi.GenerateToken("Client_Id", "Client_Secret");
+            var oauthApi = new OAuthAPI();
+            var Response = await oauthApi.GenerateToken();
             if (Response.StatusCode == HttpStatusCode.OK)
             {
                 Console.WriteLine(await Response.Content.ReadAsStringAsync());
