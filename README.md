@@ -29,14 +29,21 @@ PM> Install-Package XPO.Connect.Util.API.SDK -Version 1.0.0
 
      *using XPO.Connect.Util.API.SDK;*
 
+   - Step 2:  Add appsettings.json file in your project and configure oAuthAPIKey, Client_Id & Client_Secret.
+
+    *{
+      "oAuthAPIKey": "X-API-Key",
+      "client_id": "client_Id_value",
+      "client-secret": "client_secret_value"
+   }*
   
-  - Step 2:  Create OAuth API class instance by passing "X-API-Key".
+  - Step 3:  Create OAuth API class instance.
 
-    *var oauthApi = new OAuthAPI("X-API-Key");*
+    *var oauthApi = new OAuthAPI();*
 
-- Step 3: Call oAuthAPI's GenerateToken Method by passing "Client_Id" and "Client_Secret".          
+- Step 4: Call oAuthAPI's GenerateToken Method.          
 
-*`var Response = await oauthApi.GenerateToken("Client_Id", "Client_Secret");`*
+*`var Response = await oauthApi.GenerateToken();`*
 
 ### Code Sample
 
@@ -51,17 +58,17 @@ PM> Install-Package XPO.Connect.Util.API.SDK -Version 1.0.0
     
             static async void CallTokenApi()
             {
-                var oauthApi = new OAuthAPI("X-API-Key");
-                var Response = await oauthApi.GenerateToken("Client_Id", "Client_Secret");
-                if (Response.StatusCode == HttpStatusCode.OK)
-                {
-                    Console.WriteLine(await Response.Content.ReadAsStringAsync());
-                }
-                else
-                {
-                    Console.WriteLine("Error while fetching data.");
-                }
-    
+                 var oauthApi = new OAuthAPI();
+                var Response = await oauthApi.GenerateToken();
+               if (Response.StatusCode == HttpStatusCode.OK)
+              {
+                Console.WriteLine(await Response.Content.ReadAsStringAsync());
+              }
+             else
+             {
+                Console.WriteLine("Error while fetching data.");
+             }
+             
             }
         }
 
