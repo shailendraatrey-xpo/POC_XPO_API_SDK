@@ -18,7 +18,7 @@ Prerequisites
 
 Install the SDK using Nuget
 
-PM> Install-Package XPO.Connect.Util.API.SDK -Version 1.0.0
+PM> Install-Package XPO.Connect.Util.API.SDK -Version 1.0.1
 
 ### oAuth API
  User can generate JWT token using oAuth API, that last for 2 hours.
